@@ -1,6 +1,4 @@
 import { View, Text } from 'react-native'
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createStackNavigator } from '@react-navigation/stack';
 
 import React from 'react'
 import Navbar from './comp/navbar';
@@ -10,7 +8,6 @@ export default function App() {
     <View>
       <Navbar />
       <Movielist />
-      <Text>App</Text>
     </View>
   );
 }
