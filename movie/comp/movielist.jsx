@@ -1,8 +1,11 @@
 import { Dimensions ,View, Text, Image, ScrollView, StyleSheet,TouchableWithoutFeedback, Alert } from 'react-native'
 import React, { useEffect, useState } from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import {Movieinfo} from './movieinfo';
 
-const Movielist = () => {
+ var sd=[]
+const Movielist = (props) => {
+    const [single, setSingle] = useState([])
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -12,16 +15,16 @@ const Movielist = () => {
             .catch(error => console.error(error))
     }, []);
     function handlePress (item){
-        // console.log(`Pressed item ${item}`);
+        setSingle(item)
         Alert.alert('info',`
         name:${item.name},
         date:${item.release_year},
         desc:${item.desc}`);
+        sd=single
+        console.log(single)
       }
     return (
-        
         <ScrollView>
-            
             {
                 data.map(item => (
                             <TouchableWithoutFeedback style={styles.toucheble} key={item.id} onPress={() => handlePress(item)}>
@@ -55,3 +58,4 @@ const styles = StyleSheet.create({
 
 
 export default Movielist
+export {sd}

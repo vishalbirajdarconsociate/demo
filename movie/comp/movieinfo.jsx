@@ -1,11 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import Navbar from './navbar'
-export default function movieinfo() {
+import {Movielist,sd} from './movielist'
+export const  Movieinfo=()=> {
+    console.log(sd)
     return (
         <View>
             <Navbar />
-            <Text>movieinfo</Text>
+            <Text></Text>
         </View>
     )
 }
